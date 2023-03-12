@@ -1170,7 +1170,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 79.64, 80, 397.81, 426.606 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 79.64, 80, 397.81, 423.51 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1274,7 +1274,7 @@
 /**
  * Enable this option for a probe connected to the Z-MIN pin.
  * The probe replaces the Z-MIN endstop and is used for Z homing.
- * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
+ * (Automatically enables USE_PROBE_FOR_MINHOMING.)
  */
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
@@ -1485,7 +1485,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -30, -40, -4.839 }
+#define NOZZLE_TO_PROBE_OFFSET { -30, -40, -4.79 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1702,9 +1702,9 @@
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS -11
-#define Z_MIN_POS 0
+#define Z_MIN_POS -0.09f
 #define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS 229
+#define Y_MAX_POS 226
 #define Z_MAX_POS 220
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
@@ -3173,7 +3173,7 @@
   #define BUTTON_DELAY_MENU     250 // (ms) Button repeat delay for menus
 
   //#define DISABLE_ENCODER         // Disable the click encoder, if any
-  //#define TOUCH_IDLE_SLEEP_MINS 5 // (minutes) Display Sleep after a period of inactivity. Set with M255 S.
+  //#define TOUCH_IDLE_SLEEP_MINS 1 // (minutes) Display Sleep after a period of inactivity. Set with M255 S.
 
   #define TOUCH_SCREEN_CALIBRATION
 
@@ -3188,7 +3188,7 @@
   #endif
 
   #if ENABLED(TFT_COLOR_UI)
-    //#define SINGLE_TOUCH_NAVIGATION
+    #define SINGLE_TOUCH_NAVIGATION
   #endif
 #endif
 
